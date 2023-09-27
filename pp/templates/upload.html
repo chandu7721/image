@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Similarity Checker</title>
+</head>
+<body>
+    <h1>Image Similarity Checker</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file1" accept=".jpg, .jpeg, .png" required>
+        <input type="file" name="file2" accept=".jpg, .jpeg, .png" required>
+        <button type="submit">Check Similarity</button>
+    </form>
+    {% if similarity is defined %}
+        <h2>Similarity Score:</h2>
+        <p>{{ similarity }}</p>
+    {% endif %}
+    {% if error is defined %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
